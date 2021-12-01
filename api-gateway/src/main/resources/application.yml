@@ -1,0 +1,22 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: api-gateway-server
+
+  cloud:
+    gateway:
+      routes:
+      - id: ProductService
+        uri: http://localhost:8081
+        predicates:
+        - Path=/api/products/**
+      - id: calculatorService
+        uri: http://localhost:8082
+        predicates:
+          - Path=/api/calculator/**
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    fetch-registry: false
