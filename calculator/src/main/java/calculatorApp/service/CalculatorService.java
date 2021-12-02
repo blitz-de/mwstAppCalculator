@@ -9,9 +9,9 @@ public class CalculatorService {
 
 //    @Autowired CalculatorRepository calculatorRepo;
 
-    public Long calculatorMwst(Long nettoPrice){
-        Long mehrwertsteuer = (long) (nettoPrice * 0.19);
+    public Double calculatorMwst(Double nettoPrice){
+        Double mehrwertsteuer = nettoPrice * 0.19;
 
-        return  mehrwertsteuer;
+        return mehrwertsteuer;
     }
 }

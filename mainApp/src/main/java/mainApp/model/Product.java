@@ -14,13 +14,13 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	Integer id;
 	String name;
-	Integer price;
+	Double price;
 	String location;
 	String description;
 	
 	public Product() {}
-	public Product(Integer id, String name, 
-			Integer price, String location, String description) {
+	public Product(Integer id, String name,
+				   Double price, String location, String description) {
 		this.id = id;
 		this.price = price;
 		this.name = name;
@@ -34,10 +34,10 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(Integer price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	public String getLocation() {
