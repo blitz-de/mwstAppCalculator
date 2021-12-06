@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="product")
 public class Product {
 
 	@Id
@@ -27,7 +27,8 @@ public class Product {
 		this.location = location;
 		this.description = description;
 	}
-	
+
+	public void setId(Integer id) {this.id = id;}
 	public String getName() {
 		return name;
 	}
