@@ -1,9 +1,11 @@
 # H2
 spring:
+  main:
+    banner-mode: off
   batch:
     job:
       enabled: false
-    initialize-schema: ALWAYS
+#    initialize-schema: ALWAYS
   application:
     name: ProductService
   datasource:
@@ -11,8 +13,8 @@ spring:
     url: jdbc:mysql://localhost:3306/product?createDatabaseIfNotExist=true
     username: zac
     password: newAdmin
-    platform: mysql
-    initialization-mode: always
+#    platform: mysql
+#    initialization-mode: always
   jpa:
     generate-ddl: true
     hibernate.ddl-auto: update

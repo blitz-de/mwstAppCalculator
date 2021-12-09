@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mainApp.model.Product;
-import mainApp.repository.ProductRepo;
+import mainApp.repository.ProductRepository;
 
 /**
  * Will call products from repository
@@ -16,7 +16,8 @@ import mainApp.repository.ProductRepo;
 @Service
 public class ProductService {
 
-	@Autowired ProductRepo productRepository;
+	@Autowired
+    ProductRepository productRepository;
 	
 	public ProductService() {
 		
