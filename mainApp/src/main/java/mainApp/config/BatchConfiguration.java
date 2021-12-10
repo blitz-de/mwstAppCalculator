@@ -39,17 +39,6 @@ public class BatchConfiguration {
     @Autowired
     public DataSource dataSource;
 
-//    @Primary
-//    @Bean
-//    public DataSource dataSource(){
-//        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        dataSource.setUrl("jdbc:mysql://localhost:3306/product");
-//        dataSource.setUsername("zac");
-//        dataSource.setPassword("newAdmin");
-//
-//        return dataSource;
-//    }
 
     @Bean
     public JdbcCursorItemReader<Product> reader(){
@@ -83,7 +72,7 @@ public class BatchConfiguration {
     public FlatFileItemWriter<Product> writer(){
         FlatFileItemWriter<Product> writer = new FlatFileItemWriter<Product>();
         writer.setResource(new ClassPathResource("products.csv"));
-        writer.setResource(new FileSystemResource("products.csv"));
+//        writer.setResource(new FileSystemResource("products.csv"));
         DelimitedLineAggregator<Product> aggregator = new DelimitedLineAggregator<>();
 //        aggregator.setDelimiter(",");
         BeanWrapperFieldExtractor<Product> fieldExtractor = new BeanWrapperFieldExtractor<Product>();

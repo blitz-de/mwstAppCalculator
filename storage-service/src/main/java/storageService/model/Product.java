@@ -6,12 +6,14 @@ package storageService.model;
 //import javax.persistence.Id;
 //import javax.persistence.Table;
 
+
+
 //@Entity
-//@Table(name="product")
+//@Table(name="product_duplica")
 public class Product {
 
 //    @Id
-//    @GeneratedValue(strategy=GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     Integer id;
     String name;
     Double price;
@@ -28,6 +30,7 @@ public class Product {
         this.description = description;
     }
 
+    public Integer getId() {return id;}
     public void setId(Integer id) {this.id = id;}
     public String getName() {
         return name;
