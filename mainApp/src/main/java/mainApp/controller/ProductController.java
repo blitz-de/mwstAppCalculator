@@ -1,7 +1,9 @@
 package mainApp.controller;
 
+import java.io.IOException;
 import java.util.Optional;
 
+//import mainApp.config.CsvExportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +17,18 @@ import org.springframework.web.bind.annotation.RestController;
 import mainApp.model.Product;
 import mainApp.services.ProductService;
 
+import javax.servlet.http.HttpServletResponse;
+
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
 
 	@Autowired ProductService productService;
+
+//	private final CsvExportService csvExportService;
+
 	public ProductController() {
-		
+//		this.csvExportService = csvExportService;
 	}
 	/**
 	 * Getting productBy id using the url
@@ -48,5 +55,11 @@ public class ProductController {
 		return new ResponseEntity<>(product,
 				HttpStatus.CREATED);
 	}
-	
+
+//	@GetMapping("/all")
+//	public void getAllEmployeesInCsv(HttpServletResponse servletResponse) throws IOException {
+//		servletResponse.setContentType("text/csv");
+//		servletResponse.addHeader("Content-Disposition","attachment; filename=\"products.csv\"");
+//		csvExportService.writeProductsToCsv(servletResponse.getWriter());
+//	}
 }

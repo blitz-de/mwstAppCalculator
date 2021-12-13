@@ -7,37 +7,39 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="product")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	Integer id;
 	String name;
-	Integer price;
+	Double price;
 	String location;
 	String description;
 	
 	public Product() {}
-	public Product(Integer id, String name, 
-			Integer price, String location, String description) {
+	public Product(Integer id, String name,
+				   Double price, String location, String description) {
 		this.id = id;
 		this.price = price;
 		this.name = name;
 		this.location = location;
 		this.description = description;
 	}
-	
+
+	public Integer getId(){ return this.id;}
+	public void setId(Integer id) {this.id = id;}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(Integer price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	public String getLocation() {
