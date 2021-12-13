@@ -10,6 +10,7 @@ First, run:
 Second,
 # POST request through http://localhost:8765/api/products/add:
 In POSTMAN try adding the following body, example:
+
 `
 {
     "name":"generator",
