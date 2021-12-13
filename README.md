@@ -12,13 +12,13 @@ Second,
 In POSTMAN try adding the following body, example:
 
 `
-\
+<br/>
 {\
-    "name":"generator",\
-    "price": "1000",\
-    "location": "Berlin",\
-    "description": "light your whole house"\
-}\
+    "name":"generator",<br/>
+    "price": "1000",<br/>
+    "location": "Berlin",<br/>
+    "description": "light your whole house"<br/>
+}<br/>
 `
 
 Third, 
