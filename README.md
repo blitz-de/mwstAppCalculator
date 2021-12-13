@@ -27,5 +27,7 @@ In POSTMAN try adding the following body, example:
 `
 
 Third, 
-# GET request (Product) http://localhost:8765/api/products/1
+# GET request 
+Get a product with a specific ID using the following request link: 
+`http://localhost:8765/api/products/1`
 
