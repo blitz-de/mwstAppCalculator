@@ -1,7 +1,6 @@
 # MwstCalculator
-Run the first services in order:
 
-First, run:
+At the beginning, run the following services in order:
 
 1. Discovery Service
 2. Api-Gateway
