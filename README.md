@@ -8,8 +8,9 @@ First, run:
 3. Other Services
 
 Second,
-# POST request through http://localhost:8765/api/products/add:
-In POSTMAN try adding the following body, example:
+# POST request 
+Add a new product using the following request: `http://localhost:8765/api/products/add:`
+In POSTMAN try adding the following body to add a specific product, example:
 
 `
 
