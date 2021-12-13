@@ -1,5 +1,5 @@
 # MwstCalculator
-Run the first services in a row:
+Run the first services in order:
 
 First, run:
 
