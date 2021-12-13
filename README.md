@@ -14,6 +14,7 @@ In POSTMAN try adding the following body, example:
 `
 
 {
+
     "name":"generator",
     
     "price": "1000",
