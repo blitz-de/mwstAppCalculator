@@ -12,6 +12,7 @@ Second,
 In POSTMAN try adding the following body, example:
 
 `
+
 {
 
     "name":"generator",
@@ -23,6 +24,7 @@ In POSTMAN try adding the following body, example:
     "description": "light your whole house"
     
 }
+
 `
 
 Third, 
