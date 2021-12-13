@@ -19,6 +19,7 @@ In POSTMAN try adding the following body, example:
     "description": "light your whole house"
 }
 `
+
 Third, 
 # GET request (Product) http://localhost:8765/api/products/1
 
