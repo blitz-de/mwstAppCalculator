@@ -7,6 +7,10 @@ First, run:
 2. Api-Gateway
 3. Other Services
 
+
+# Important INFO
+Every request will go through the API-Gateway where all other services are added. The Port to the Gateway is `:8765`
+
 Second,
 # POST request 
 Add a new product using the following request: `http://localhost:8765/api/products/add:` <br/>
