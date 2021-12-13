@@ -9,7 +9,7 @@ First, run:
 
 Second,
 # POST request 
-Add a new product using the following request: `http://localhost:8765/api/products/add:`
+Add a new product using the following request: `http://localhost:8765/api/products/add:` <br/>
 In POSTMAN try adding the following body to add a specific product, example:
 
 `
