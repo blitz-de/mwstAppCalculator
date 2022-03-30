@@ -1,43 +1,35 @@
 package mainApp.services;
 
-import java.util.Optional;
-
+import mainApp.model.Product;
+import mainApp.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mainApp.model.Product;
-import mainApp.repository.ProductRepository;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Will call products from repository
- * @author zacki
  *
+ * @author zacki
  */
 @Service
 public class ProductService {
 
 	@Autowired
-    ProductRepository productRepository;
-	
-	public ProductService() {
-		
-	}
-	
-	/**
-	 * Get Product by id from Repo
-	 * @param id
-	 * @return
-	 */
-	public Optional<Product> getProductById(Integer id) {
+	ProductRepository productRepository;
+
+	public Optional<Product> findById(Integer id) {
 		return productRepository.findById(id);
 	}
-	
-	/**
-	 * Create a product to the database
-	 */
-	public Product postProduct(Product product) {
+
+	public Product save(Product product) {
 		return productRepository.save(product);
 	}
-	
-	
+
+	public List<Product> findAll(){
+		return productRepository.findAll();
+	}
+
+
 }
