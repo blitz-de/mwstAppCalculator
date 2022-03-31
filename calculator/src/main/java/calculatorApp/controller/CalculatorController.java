@@ -1,18 +1,12 @@
 package calculatorApp.controller;
 
-//import calculatorApp.model.Calculator;
-import calculatorApp.model.Product;
 import calculatorApp.service.CalculatorService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-import javax.ws.rs.core.Response;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/calculator")
@@ -30,23 +24,27 @@ public class CalculatorController {
      * @return mehrwertsteur of the product's netto price
      */
     @GetMapping("/product/{id}")
-    public ResponseEntity<Double>
-        getMehrwertsteuerByProductId(@PathVariable Integer id){
+    @Operation(summary = "Calculate VAT for a specific product ")
+    @ApiResponse(description = "VAT amount")
+    public ResponseEntity<Double> getMehrwertsteuerByProductId(
+            @Parameter(description = "Id of the product") @PathVariable Integer id
+    ) {
+        Double vat = calculatorService.calculatorMwst(id);
+        if (vat != null) {
+            return ResponseEntity.ok(vat);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
-        // ToDo: get Product price from mainApp microservice
-        RestTemplate restTemplate = new RestTemplate();
-
-        // Info: mwst = productsId.price * 0.19 -> calculatorService.calculateMwst(nettoPrice);
-
-        Product product =
-                restTemplate.getForObject("http://localhost:8765/api/products/"+id, Product.class);
-
-        // ToDo: deserialize product
-
-        Double mwst = calculatorService.calculatorMwst(product.getPrice());
-        //Extras: Call the service first: RestTemplate.getForEntity(url, responseType, uriVariables)
-
-        return new ResponseEntity<Double>(mwst, HttpStatus.ACCEPTED);
+    @GetMapping("/vat")
+    @Operation(summary = "Calculate VAT based on a price ")
+    @ApiResponse(description = "VAT amount")
+    public ResponseEntity<Double> getMehrwertsteuer(
+            @Parameter(description = "Price based on which VAT will be calculated") @RequestParam Double price
+    ) {
+        return ResponseEntity.ok(calculatorService.calculatorMwst(price));
     }
 
 }
+

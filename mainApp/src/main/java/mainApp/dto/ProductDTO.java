@@ -1,18 +1,33 @@
-package calculatorApp.model;
+package mainApp.dto;
 
-public class Product {
+//import mainApp.model.ProductDeliveryInfo;
 
-    Integer id;
-    String name;
-    Double price;
-    String location;
-    String description;
-    String color;
-    Double size;
-    Double weight;
-    String type;
-    String placeOfManufacture;
+import java.time.Instant;
 
+public class ProductDTO {
+    private Integer id;
+    private String name;
+    private Double price;
+    private String location;
+    private String description;
+    private String color;
+    private Double size;
+    private Double weight;
+    private String type;
+    private String placeOfManufacture;
+    private Instant estimatedDelivery;
+    private Double vat;
+    private Integer deliveryTime;
+    private Integer productAmount;
+    private String locationInfo;
+
+    public Instant getEstimatedDelivery() {
+        return estimatedDelivery;
+    }
+
+    public void setEstimatedDelivery(Instant estimatedDelivery) {
+        this.estimatedDelivery = estimatedDelivery;
+    }
 
     public Integer getId() {
         return id;
@@ -92,5 +107,37 @@ public class Product {
 
     public void setPlaceOfManufacture(String placeOfManufacture) {
         this.placeOfManufacture = placeOfManufacture;
+    }
+
+    public Integer getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(Integer deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public Integer getProductAmount() {
+        return productAmount;
+    }
+
+    public void setProductAmount(Integer productAmount) {
+        this.productAmount = productAmount;
+    }
+
+    public String getLocationInfo() {
+        return locationInfo;
+    }
+
+    public void setLocationInfo(String locationInfo) {
+        this.locationInfo = locationInfo;
+    }
+
+    public Double getVat() {
+        return vat;
+    }
+
+    public void setVat(Double vat) {
+        this.vat = vat;
     }
 }
