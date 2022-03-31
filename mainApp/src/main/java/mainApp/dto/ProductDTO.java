@@ -1,6 +1,6 @@
 package mainApp.dto;
 
-//import mainApp.model.ProductDeliveryInfo;
+import mainApp.model.ProductDeliveryInfo;
 
 import java.time.Instant;
 
