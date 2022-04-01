@@ -1,12 +1,17 @@
 spring:
   application:
-    name: calculatorService
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: password
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    name: calculator-service
+  cloud:
+    discovery:
+      enabled: true
+
 server:
   port: 8082
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+
+service:
+  main-app: ${MAIN_SERVICE:http://main-app/}
