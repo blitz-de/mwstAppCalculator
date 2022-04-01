@@ -38,7 +38,7 @@ export:
 
 service:
   storage: ${STORAGE_SERVICE:http://storage-service/storage}
-  calculator: ${CALCULATOR_SERVICE:http://calculator-service/calculator}
+  calculator: ${CALCULATOR_SERVICE:http://calculator-service/api/calculator}
 
 eureka:
   instance:

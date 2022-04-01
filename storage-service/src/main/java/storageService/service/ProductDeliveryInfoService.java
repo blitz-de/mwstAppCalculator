@@ -31,4 +31,8 @@ public class ProductDeliveryInfoService {
     public Optional<ProductDeliveryInfo> findByProductId(Integer id){
         return productDeliveryInfoRepository.findByProductId(id);
     }
+
+    public Optional<ProductDeliveryInfo> findById(Integer id){
+        return productDeliveryInfoRepository.findById(id);
+    }
 }

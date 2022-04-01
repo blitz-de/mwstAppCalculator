@@ -67,7 +67,18 @@ public class StorageService {
                 productDeliveryInfo -> {
                     Optional<Product> productOpt = productService.findById(productDeliveryInfo.getProductId());
                     if (productOpt.isPresent()) {
-                        deliveryInfoListToSave.add(productDeliveryInfo);
+                        Optional<ProductDeliveryInfo> productDeliveryInfoOpt = productDeliveryInfoService.findById(productOpt.get().getId());
+
+                        if(productDeliveryInfoOpt.isPresent()){
+                            ProductDeliveryInfo existintProductDeliveryInfo = productDeliveryInfoOpt.get();
+                            existintProductDeliveryInfo.setDeliveryTime(productDeliveryInfo.getDeliveryTime());
+                            existintProductDeliveryInfo.setProductAmount(productDeliveryInfo.getProductAmount());
+                            existintProductDeliveryInfo.setLocation(productDeliveryInfo.getLocation());
+
+                            productDeliveryInfoService.save(existintProductDeliveryInfo);
+                        } else {
+                            deliveryInfoListToSave.add(productDeliveryInfo);
+                        }
                     }
                 }
         );
