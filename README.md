@@ -57,3 +57,14 @@ Get a product with a specific ID using the following request link:
 # GET request
 To get the VAT (Mehrwertsteuer) of a specific product using its ID. <br/>
 For example, get the MwtSt of product 1: `http://localhost:8765/api/calculator/product/1`
+
+
+# Docker
+## Run Docker on any Service
+
+### First: Build Maven
+`mvn clean install`
+
+### Second: Run Docker
+`docker build -t <name> -f Dockerfile .`
+
