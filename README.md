@@ -69,5 +69,5 @@ For example, get the MwtSt of product 1: `http://localhost:8765/api/calculator/p
 `docker build -t <name> -f Dockerfile .`
 
 # Diagram
-![ezcv logo](https://raw.githubusercontent.com/blitz-de/mwstAppCalculator/main/.github/diagram.png)
+![ezcv logo](https://raw.githubusercontent.com/blitz-de/mwstAppCalculator/main/diagram.png)
 
