@@ -142,5 +142,4 @@ public class MainAppController {
 		return ResponseEntity.ok(productAggregatorService.importDeliveryInfo(productDeliveryInfo, id));
 	}
 
-
 }
