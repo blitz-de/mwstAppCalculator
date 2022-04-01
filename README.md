@@ -51,7 +51,8 @@ In POSTMAN try adding the following body to add a specific product, example:
 
 `
 
-Add a product detail to a given product id (ex: 1) using the following request: `http://localhost:8765/product/1/details/
+
+Add a product detail to a given product id (ex: 1) using the following request: `http://localhost:8765/product/1/details/`
 
 `
 
