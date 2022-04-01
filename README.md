@@ -25,40 +25,59 @@ Available ports are:
 * 8082 -> calculator app
 * 8084 -> storage app
 
-
-Third,
+------
+Third, using POSTMAN
 
 # MainApplication Service
 ## POST request 
-Add a new product using the following request: `http://localhost:8765/api/products/add:` <br/>
+Add a new product using the following request: `http://localhost:8765/product/add` <br/>
 In POSTMAN try adding the following body to add a specific product, example:
 
 `
 
 {
 
-    "name":"generator",
-    
-    "price": "1000",
-    
-    "location": "Berlin",
-    
-    "description": "light your whole house"
+  "id": "1",
+  "name": "generator",
+  "price": 50,
+  "location": "Berlin",
+  "description": "light your whole house",
+  "color": "green",
+  "size": 100,
+  "weight": 15,
+  "type": "electrical",
+  "placeOfManufacture": "China"
 }
 
 `
 
+Add a product detail to a given product id (ex: 1) using the following request: `http://localhost:8765/product/1/details/
+
+`
+
+{
+    "id": 2,
+    "productId": 1,
+    "deliveryTime": 11,
+    "productAmount": 100,
+    "location": " Saturn"
+}
+
+`
+
+*** For the rest of endpoints check swagger...
+
 Foruth, 
 ## GET request 
 Get a product with a specific ID using the following request link: 
-`http://localhost:8765/api/products/1`
+`http://localhost:8765/products/1`
 
 # Calculator Service
 # GET request
 To get the VAT (Mehrwertsteuer) of a specific product using its ID. <br/>
 For example, get the MwtSt of product 1: `http://localhost:8765/api/calculator/product/1`
 
-
+------
 # Docker
 ## Run Docker on any Service
 
@@ -67,7 +86,7 @@ For example, get the MwtSt of product 1: `http://localhost:8765/api/calculator/p
 
 ### Second: Run Docker
 `docker build -t <name> -f Dockerfile .`
-
+------
 # Diagram
 ![ezcv logo](https://raw.githubusercontent.com/blitz-de/mwstAppCalculator/main/diagram.png)
 
