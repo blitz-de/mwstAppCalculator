@@ -7,7 +7,7 @@ At the beginning, run the following services in order:
 3. Other Services
 
 
-# Important INFO
+### Important INFO
 Every request will go through the API-Gateway where all other services are added. The Port to the Gateway is `:8765`
 
 Second, 
@@ -67,4 +67,7 @@ For example, get the MwtSt of product 1: `http://localhost:8765/api/calculator/p
 
 ### Second: Run Docker
 `docker build -t <name> -f Dockerfile .`
+
+# Diagram
+![ezcv logo](https://raw.githubusercontent.com/blitz-de/mwstAppCalculator/main/.github/diagram.png)
 
