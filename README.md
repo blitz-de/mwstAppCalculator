@@ -37,20 +37,20 @@ In POSTMAN try adding the following body to add a specific product, example:
 
 {
 
-  "id": "1",
-  "name": "generator",
-  "price": 50,
-  "location": "Berlin",
-  "description": "light your whole house",
-  "color": "green",
-  "size": 100,
-  "weight": 15,
-  "type": "electrical",
-  "placeOfManufacture": "China"
+    "id": "1",
+    "name": "generator",
+    "price": 50,
+    "location": "Berlin",
+    "description": "light your whole house",
+    "color": "green",
+    "size": 100,
+    "weight": 15,
+    "type": "electrical",
+    "placeOfManufacture": "China"
 }
 
 `
-
+<br/>
 
 Add a product detail to a given product id (ex: 1) using the following request: `http://localhost:8765/product/1/details/`
 
