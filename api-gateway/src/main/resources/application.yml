@@ -21,7 +21,7 @@ spring:
       - id: calculator-service
         uri: lb://calculator-service
         predicates:
-        - Path=/calculator/**
+        - Path=/api/calculator/**
         filters:
         - RewritePath=/(?<segment>.*), /$\{segment}
       - id: storage-service
